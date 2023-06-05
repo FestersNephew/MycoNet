@@ -1,18 +1,18 @@
 {
+  "homepage": "https://festersnephew.github.io/MycoNetStaking",
   "name": "tensor-wallet",
   "version": "1.0.0",
-  "homepage": "https://festersnephew.github.io/MycoNetStaking",
   "description": "A non-custodial, in-browser wallet for Bittensor. Quick and easy to use, but not audited.",
   "author": "kmadk <zagreus29@gmail.com>",
   "license": "Apache-2.0",
   "scripts": {
     "prebuild": "yarn clean",
     "build": "webpack",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "deep-clean": "yarn clean && rm -rf node_modules",
     "clean": "rm -rf dist build tsconfig.tsbuildinfo",
-    "dev": "yarn run clean && tsc -b & webpack serve --config webpack.config.js",
-    "predeploy": "yarn run build && mv dist build",
-    "deploy": "gh-pages -d build"
+    "dev": "yarn run clean && tsc -b & webpack serve --config webpack.config.js"
   },
   "repository": {
     "type": "git",
